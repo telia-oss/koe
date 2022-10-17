@@ -17,9 +17,10 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       
-  run:
-
+  test:
+    needs: build
     runs-on: ubuntu-latest
-    - name: Run the Docker image
-      run: docker run my-image-name:$(date +%s)
+    steps:
+      - run: docker run my-image-name:$(date +%s)
+
 
