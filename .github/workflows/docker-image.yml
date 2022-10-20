@@ -10,7 +10,7 @@ jobs:
 
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
@@ -33,7 +33,7 @@ jobs:
   test:
     needs: build
     
-    runs-on: self-hosted
+    runs-on: ubuntu-selfhosted
 
     steps:
     - name: Login to Docker Hub
