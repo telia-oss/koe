@@ -22,7 +22,7 @@ jobs:
 #        password: ${{ secrets.DOCKERHUB_PASSWORD }}
 #
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag koe:latest
 #    - name: Build and push
 #      uses: docker/build-push-action@v3
 #      with:
@@ -42,5 +42,5 @@ jobs:
 #        username: ${{ secrets.DOCKERHUB_USERNAME }}
 #        password: ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Run the image
-      run: docker run my-image-name:$(date +%s)
+      run: docker run koe:latest
 
